@@ -46,7 +46,7 @@ class SigninController extends GetxController {
  errorMessage = 'user-not-found';
           break;    
         case 'wrong-password':
-          errorMessage = 'invalid Email Or Password Please Check Your Credentials';
+          errorMessage = 'invalid Eail Or Password Please Check Your Credentials';
           break;
         default:
           errorMessage = 'anErrorOccurredDuringLoginPleaseTryAgainLater';
