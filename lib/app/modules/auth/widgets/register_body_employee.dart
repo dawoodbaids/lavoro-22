@@ -192,7 +192,7 @@ class RegisterBodyEmployee extends GetView<RegisterControllerEmployee> {
               const SizedBox(height: 16.0),
               CustomTextFormField(
                 controller: controller.confirmPasswordController,
-                label: 'Confirm Password',
+                label: 'Confir Password',
                 prefixIcon: const Icon(Icons.lock),
                 isPassword: true,
                 validator: (value) => CustomValidator.confirmPassword(
