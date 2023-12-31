@@ -115,25 +115,26 @@ class DatabaseFirestore extends GetxController {
       return null;
     }
   }
-  //  static Stream<UserAccountChat> getUserByIdStream(String id) {
-  //   return firebaseInstance.collection("users").doc(id).snapshots().map((doc) {
-  //     final data = doc.data() ?? {};
+   static Stream<UserAccountChat> getUserByIdStream(String id) {
+    return firebaseInstance.collection("users").doc(id).snapshots().map((doc) {
+      final data = doc.data() ?? {};
 
-  //     return UserAccountChat.formJson(data);
-  //   });
-  // }
-  // static Future<UserAccountChat?> getUserById(String id) async {
-  //   try {
-  //     final doc = await firebaseInstance.collection("users").doc(id).get();
-  //     final data = doc.data() ?? {};
-  //     final userAccountChat = UserAccountChat.formJson(data);
-  //     if (userAccountChat.uid == null) {
-  //       return null;
-  //     }
-  //     return userAccountChat;
-  //   } catch (err) {
-  //     rethrow;
-  //   }
+    return UserAccountChat.formJson(data);
+    });
+  }
+  static Future<UserAccountChat?> getUserById(String id) async {
+    try {
+      final doc = await firebaseInstance.collection("users").doc(id).get();
+      final data = doc.data() ?? {};
+      final userAccountChat = UserAccountChat.formJson(data);
+      if (userAccountChat.uid == null) {
+        return null;
+      }
+      return userAccountChat;
+    } catch (err) {
+      rethrow;
+    }
 
-  // }
+
+  }
 }

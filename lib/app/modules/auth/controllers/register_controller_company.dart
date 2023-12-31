@@ -21,7 +21,7 @@ class RegisterControllerCompany extends GetxController {
   late User? user;
   late String selectedCountry2 = "Select Country";
   late RxBool isExpanded = false.obs;
-  String? imagePath;
+late  String? imagePath;
   late String country;
   late TextEditingController companyNameController;
   late TextEditingController cemailController;
@@ -47,31 +47,28 @@ class RegisterControllerCompany extends GetxController {
     "karak"
   ];
 
-  List<String> languageOptions = [
-    'Python',
-    'Java',
-    'JavaScript',
-    'C#',
-    'C++',
-    'Ruby',
-    'PHP',
-    'Swift',
-    'Kotlin',
-    'Dart',
-    'Go',
-    'Rust',
-    'TypeScript',
-    'SQL',
-    'HTML/CSS',
-    'Perl',
-    'Scala',
-    'Objective-C',
-    'Lua',
-    'Haskell',
-    'COBOL',
-    'Fortran',
-    'Prolog'
-  ];
+ Map<String, List<String>> jobLanguages = {
+  'Front-end Engineer': ['HTML', 'CSS', 'JavaScript'],
+  'Mobile App Developer': ['Dart', 'Swift', 'Kotlin'],
+  'Accessibility Specialist': ['HTML', 'CSS', 'JavaScript'],
+  'Ruby on Rails Developer': ['Ruby', 'Rails'],
+  'PHP Developer': ['PHP'],
+  'Server-side Engineer': ['Node.js', 'Python', 'Java', 'C#'],
+  'Big Data Engineer': ['Hadoop', 'Spark', 'SQL'],
+  'Data Warehouse Architect': ['SQL', 'Data Modeling'],
+  'Cybersecurity Specialist': ['Python', 'C/C++', 'Java'],
+  'IT Support Specialist': ['Scripting Languages', 'Troubleshooting'],
+  'Quality Assurance (QA) Engineer': ['Scripting Languages', 'Testing Frameworks'],
+  'DevOps Engineer': ['Python', 'Bash', 'PowerShell'],
+  'Cloud Architect/Engineer': ['Python', 'PowerShell'],
+  'Machine Learning Engineer': ['Python', 'TensorFlow', 'PyTorch'],
+  'Blockchain Developer': ['Solidity', 'Go', 'JavaScript'],
+  'IoT Specialist': ['C/C++', 'Python', 'JavaScript'],
+  'UI/UX Designer': ['Figma', 'Sketch', 'Adobe XD'],
+  'Data Scientist': ['Python', 'R', 'SQL'],
+  'AI Ethics Specialist': ['AI/ML Development Languages'],
+};
+
 
   @override
   void onInit() {

@@ -4,6 +4,7 @@ import 'package:lavoro/app/modules/home/views/home_view.dart';
 
 import '../../user_profile/view/user_profile_view.dart';
 
+import '../../userchat/user_chat.dart';
 import '../controllers/home_controller.dart';
 
 class HomeBottomAppBar extends GetView<HomeController> {
@@ -41,8 +42,8 @@ class HomeBottomAppBar extends GetView<HomeController> {
             iconSize: 30,
             color: Colors.black,
             onPressed: () {
-              //   Navigator.push(context,
-              //       MaterialPageRoute(builder: (context) => const ChatUser()));
+                Navigator.push(context,
+                 MaterialPageRoute(builder: (context) => const ChatUser()));
             },
           ),
           IconButton(

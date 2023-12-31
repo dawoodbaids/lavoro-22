@@ -10,7 +10,7 @@ import 'package:get/get.dart';
 import '../provider/user_firebase.dart';
 
 class UserAccount extends GetxController {
-  final String? uid;
+  final String uid;
 final  String username;
  final List<String> selectedLanguages;
 
@@ -21,7 +21,7 @@ final  String username;
    final String descrption;
 
   UserAccount({
-    this.uid ,
+    required this.uid ,
     required this.username,
     required this.imageUrl ,
     required this.phoneNumber,

@@ -49,7 +49,7 @@ class SigninController extends GetxController {
           errorMessage = 'invalid Eail Or Password Please Check Your Credentials';
           break;
         default:
-          errorMessage = 'anErrorOccurredDuringLoginPleaseTryAgainLater';
+     errorMessage = 'Error: ${e.message}';
       }
 
       Get.snackbar(
