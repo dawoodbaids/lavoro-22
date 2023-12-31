@@ -21,7 +21,7 @@ class HomeBody extends StatelessWidget {
           SizedBox(height: 20),
           Text(
             "Programming Languages",
-            style: AppStyles.headLine2.copyWith(
+            style: AppStyles.headLine3.copyWith(
               color: Get.theme.colorScheme.onBackground,
             ),
           ),
@@ -32,6 +32,7 @@ class HomeBody extends StatelessWidget {
             child: CategoriesRow(),
           ),
           SizedBox(height: 10),
+        
         ],
       ),
     );
@@ -70,15 +71,15 @@ class CategoriesRow extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
       children: [
         CategoryBox(
-          imagePath: 'assets/images/Py.png',
-          name: 'Paython',
+          imagePath: 'assets/images/sql.png',
+          name: 'sql',
           onPressed: (String imagePath, String name) {
             handleCategorySelection(imagePath, name);
           },
         ),
         CategoryBox(
           imagePath: 'assets/images/Py.png',
-          name: 'Category 1',
+          name: 'Paython',
           onPressed: (String imagePath, String name) {
             handleCategorySelection(imagePath, name);
           },

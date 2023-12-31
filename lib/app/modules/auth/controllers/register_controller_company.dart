@@ -21,6 +21,7 @@ class RegisterControllerCompany extends GetxController {
   late User? user;
   late String selectedCountry2 = "Select Country";
   late RxBool isExpanded = false.obs;
+    late String experience;
 late  String? imagePath;
   late String country;
   late TextEditingController companyNameController;
@@ -31,6 +32,16 @@ late  String? imagePath;
   late TextEditingController cconfirmPasswordController;
   late RxList<String> cselectedLanguages = <String>[].obs;
 
+ late String selectedExperience= "select experience";
+ List<String> experiences= [
+    "select experience",
+    "0-Experince",
+    "1-5 years",
+    "5-10  years",
+    "10-15",
+"15 OR more",
+
+  ];
   List<String> countries = [
     "Select Country",
     "irbid",
@@ -80,7 +91,7 @@ late  String? imagePath;
     cphoneController = TextEditingController();
     country = countries[0];
     cselectedLanguages = <String>[].obs;
-
+  experience = experiences[0];
     super.onInit();
   }
 
@@ -141,6 +152,7 @@ late  String? imagePath;
         email: cemailController.text,
         country: selectedCountry2,
         selectedLanguages: cselectedLanguages,
+       experience:selectedExperience,
       );
 
       await DatabaseFirestore.setUser(userAccount: userAccount);

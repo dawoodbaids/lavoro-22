@@ -20,6 +20,7 @@ class RegisterControllerEmployee extends GetxController {
 
   final RxBool isExpanded = false.obs;
   late String country;
+   late String experience;
   late TextEditingController employeeNameController;
   late TextEditingController emailController;
   late TextEditingController descriptionController;
@@ -27,7 +28,16 @@ class RegisterControllerEmployee extends GetxController {
   late TextEditingController passwordController;
   late TextEditingController confirmPasswordController;
   late RxList<String> selectedLanguages = <String>[].obs;
-
+   late String selectedExperience= "select experience";
+List<String> experiences= [
+    "select experience",
+    "Trainer ",
+    "0-Experince ",
+    "1-5 years",
+    "5-10  years",
+    "10-15",
+    "15 OR more",
+  ];
   List<String> countries = [
     "Select Country",
     "irbid",
@@ -71,6 +81,7 @@ class RegisterControllerEmployee extends GetxController {
   ];
   String? imagePath;
   final UserRepo = Get.put(UserRepository());
+  
   @override
   void onInit() {
     emailController = TextEditingController();
@@ -81,6 +92,7 @@ class RegisterControllerEmployee extends GetxController {
     phoneController = TextEditingController();
     country = countries[0];
     selectedLanguages = <String>[].obs;
+    experience = experiences[0];
     // user = Get.arguments['user'];
     super.onInit();
   }
@@ -146,13 +158,14 @@ class RegisterControllerEmployee extends GetxController {
         email: emailController.text,
         country: selectedCountry,
         selectedLanguages: selectedLanguages,
+        experience:selectedExperience,
       );
 
       await DatabaseFirestore.setUser(userAccount: userAccount);
 
       UserAccount.currentUser = userAccount;
 
-      Get.offAllNamed(Routes.HOME); 
+      Get.offAllNamed(Routes.HOME);
     } catch (e) {
       CustomSnackBar.error(message: e.toString());
     }
@@ -161,6 +174,6 @@ class RegisterControllerEmployee extends GetxController {
   }
 
   Future<void> createUser(UserAccount user) async {
-  await    UserRepo.createUser(user );
+    await UserRepo.createUser(user);
   }
 }

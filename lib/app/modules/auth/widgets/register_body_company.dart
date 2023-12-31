@@ -65,7 +65,7 @@ class RegisterBodyCompany extends GetView<RegisterControllerCompany> {
                 child: Container(
                   decoration: BoxDecoration(
                     border: Border.all(color: Colors.purple),
-                    borderRadius: BorderRadius.circular(8.0),
+                    borderRadius: BorderRadius.circular(20.0),
                   ),
                   padding: const EdgeInsets.all(8.0),
                child: Obx(
@@ -77,10 +77,7 @@ class RegisterBodyCompany extends GetView<RegisterControllerCompany> {
           controller.isExpanded.value = !controller.isExpanded.value;
         },
         child: Container(
-          decoration: BoxDecoration(
-            border: Border.all(color: Colors.purple),
-            borderRadius: BorderRadius.circular(8.0),
-          ),
+       
           padding: const EdgeInsets.all(8.0),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -100,11 +97,9 @@ class RegisterBodyCompany extends GetView<RegisterControllerCompany> {
       ),
       if (controller.isExpanded.value)
         Container(
-          decoration: BoxDecoration(
-            border: Border.all(color: Colors.purple),
-            borderRadius: BorderRadius.circular(8.0),
-          ),
-          padding: const EdgeInsets.all(8.0),
+       
+         
+          padding: const EdgeInsets.all(10.0),
           child: Wrap(
             spacing: 8.0,
             children: controller.cselectedLanguages.map((jobTitle) {
@@ -118,7 +113,7 @@ class RegisterBodyCompany extends GetView<RegisterControllerCompany> {
                   }
                 },
                 child: Padding(
-                  padding: const EdgeInsets.all(4.0),
+                  padding: const EdgeInsets.all(1.0),
                   child: Container(
                     padding: const EdgeInsets.all(8.0),
                     decoration: BoxDecoration(
@@ -150,7 +145,7 @@ class RegisterBodyCompany extends GetView<RegisterControllerCompany> {
               ),
               const SizedBox(height: 16.0),
               DropdownButtonFormField<String>(
-                borderRadius: BorderRadius.circular(18.0),
+                borderRadius: BorderRadius.circular(1.0),
 
                 value: controller.selectedCountry2,
                 onChanged: (value) {

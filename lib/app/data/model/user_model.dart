@@ -11,15 +11,14 @@ import '../provider/user_firebase.dart';
 
 class UserAccount extends GetxController {
   final String uid;
-final  String username;
- final List<String> selectedLanguages;
-
+  final  String username;
+  final List<String> selectedLanguages;
   final String email;
   late String imageUrl;
   final String phoneNumber;
   final String country;
-   final String descrption;
-
+  final String descrption;
+  final String experience;
   UserAccount({
     required this.uid ,
     required this.username,
@@ -28,7 +27,8 @@ final  String username;
     required this.descrption ,
     required this.selectedLanguages,
     required this.email,
-    required  this.country ,
+    required this.country,
+    required this.experience ,
 
   });
   static UserAccount? info;
@@ -74,6 +74,7 @@ final  String username;
       'email': email,
       'country': country,
       'Programing Language':selectedLanguages,
+      'experince':experience,
     };
   }
 
@@ -86,7 +87,8 @@ final  String username;
       descrption: json['jobDescrption']??"Dec",
       email: json['email']??"Email",
       country: json['country']?? "Couuntry",
-      selectedLanguages: json['Programing Language']??"Programing Language"
+      selectedLanguages: json['Programing Language']??"Programing Language",
+       experience: json['experience']??"experience"
     );
     return info!;
   }
@@ -105,6 +107,7 @@ final  String username;
     String? phoneNumber,
     String? descrption,
     String? country,
+    String? experience,
     List<String>? selectedLanguages
 
   }) {
@@ -116,7 +119,8 @@ final  String username;
       descrption: descrption ?? this.descrption,
       email: email ?? this.email,
       country: country ?? this.country,
-      selectedLanguages: selectedLanguages?? this.selectedLanguages
+      selectedLanguages: selectedLanguages?? this.selectedLanguages,
+      experience: experience?? this.experience,
     );
   }
 
@@ -131,6 +135,7 @@ final  String username;
       email: $email,
       countrey:$country,
     selectedlanguges:$selectedLanguages,
+    experience:$experience,
     )''';
   }
 

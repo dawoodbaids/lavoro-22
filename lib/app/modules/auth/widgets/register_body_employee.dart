@@ -57,6 +57,24 @@ class RegisterBodyEmployee extends GetView<RegisterControllerEmployee> {
                 prefixIcon: const Icon(Icons.description),
               ),
               const SizedBox(height: 16.0),
+                DropdownButtonFormField<String>(
+  borderRadius: BorderRadius.circular(18.0),
+  value: controller.selectedExperience,
+  onChanged: (value) {
+    controller.selectedExperience = value!;
+  },
+  items: controller.experiences.map((experience) {
+    return DropdownMenuItem(
+      value: experience,
+      child: Text(experience),
+    );
+  }).toList(),
+  decoration: const InputDecoration(
+    labelText: 'Experience',
+    icon: Icon(Icons.format_list_numbered_sharp),
+  ),
+  // Add a validator if needed
+),const SizedBox(height: 20),
               GestureDetector(
                 onTap: () {
                   controller.isExpanded.value = !controller.isExpanded.value;
@@ -66,7 +84,8 @@ class RegisterBodyEmployee extends GetView<RegisterControllerEmployee> {
                     border: Border.all(color: Colors.purple),
                     borderRadius: BorderRadius.circular(8.0),
                   ),
-                  padding: const EdgeInsets.all(8.0),
+                  padding: const EdgeInsets.all(4.0),
+                  
                   child: Obx(
                     () => Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
@@ -153,7 +172,8 @@ class RegisterBodyEmployee extends GetView<RegisterControllerEmployee> {
                   ),
                 ),
               ),
-              const SizedBox(height: 16.0),
+  const SizedBox(height: 20),
+  
               DropdownButtonFormField<String>(
                 borderRadius: BorderRadius.circular(18.0),
 
@@ -171,9 +191,12 @@ class RegisterBodyEmployee extends GetView<RegisterControllerEmployee> {
                   labelText: 'Country',
                   icon: Icon(Icons.location_on),
                 ),
+                
                 // validator: CustomValidator.requiredCountry,
               ),
-              const SizedBox(height: 16.0),
+             
+           
+              const SizedBox(height: 20),
               CustomTextFormField(
                 controller: controller.phoneController,
                 label: 'Phone Number',
@@ -192,7 +215,7 @@ class RegisterBodyEmployee extends GetView<RegisterControllerEmployee> {
               const SizedBox(height: 16.0),
               CustomTextFormField(
                 controller: controller.confirmPasswordController,
-                label: 'Confir Password',
+                label: 'Confirm Password',
                 prefixIcon: const Icon(Icons.lock),
                 isPassword: true,
                 validator: (value) => CustomValidator.confirmPassword(
