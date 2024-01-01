@@ -14,14 +14,14 @@ class HomeBottomAppBar extends GetView<HomeController> {
   @override
   Widget build(BuildContext context) {
     return BottomAppBar(
-      color: Colors.grey,
+        color: Get.theme.colorScheme.primary,
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceAround,
         children: <Widget>[
           IconButton(
             icon: const Icon(Icons.home),
             iconSize: 40,
-            color: Colors.black,
+          color: Colors.white,
             onPressed: () {
               Get.to(() => const HomeView()); // Navigate to HomeView
             },
@@ -29,7 +29,7 @@ class HomeBottomAppBar extends GetView<HomeController> {
           IconButton(
             icon: const Icon(Icons.person),
             iconSize: 40,
-            color: Colors.black,
+           color: Colors.white,
             onPressed: () {
               Navigator.push(
                   context,
@@ -40,7 +40,9 @@ class HomeBottomAppBar extends GetView<HomeController> {
           IconButton(
             icon: const Icon(Icons.chat),
             iconSize: 30,
-            color: Colors.black,
+            color: Colors.white,
+        
+          
             onPressed: () {
                 Navigator.push(context,
                  MaterialPageRoute(builder: (context) => const ChatUser()));
@@ -49,9 +51,12 @@ class HomeBottomAppBar extends GetView<HomeController> {
           IconButton(
             icon: const Icon(Icons.person_add_alt),
             iconSize: 40,
-            color: Colors.black,
+     
+              color: Colors.white,
+         
+
             onPressed: () {
-              // Handle the onPressed action for the fourth icon
+              // Handle the onPressed action fsor the fourth icon
             },
           ),
         ],

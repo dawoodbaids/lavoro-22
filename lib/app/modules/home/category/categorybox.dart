@@ -8,11 +8,11 @@ class CategoryBox extends StatelessWidget {
   final Function(String, String) onPressed;
 
   const CategoryBox({
-    super.key,
+    Key? key,
     required this.imagePath,
     required this.name,
     required this.onPressed,
-  });
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -22,15 +22,24 @@ class CategoryBox extends StatelessWidget {
         Navigator.push(
           context,
           MaterialPageRoute(
-              builder: (context) => CategoryPage(
-                    categoryName: name,
-                    imagepath: imagePath,
-                  )),
+            builder: (context) => CategoryPage(
+              categoryName: name,
+              imagepath: imagePath,
+            ),
+          ),
         );
       },
       child: Container(
         width: 100,
         margin: const EdgeInsets.symmetric(horizontal: 5),
+        decoration: BoxDecoration(
+        // Set background color here
+          border: Border.all(
+            color: Colors.black, // Set border color here
+            width: 2.0, // Set border width here
+          ),
+          borderRadius: BorderRadius.circular(10.0), // Set border radius here
+        ),
         child: Column(
           children: [
             Image.asset(
